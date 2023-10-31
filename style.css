@@ -1,0 +1,25 @@
+#header {
+    display: flex;
+}
+
+#header > b {
+    border: 1px solid grey;
+    min-width: 100px;
+    padding: 10px 0px;
+    text-align: center ;
+}
+
+.row {
+    display: flex;
+}
+
+.row:first-child>b {
+    text-align: center;
+}
+.row > b, .row > div {
+    min-width: 100px;
+    border: 1px solid grey;
+    padding: 10px 0px;
+    text-align: center ;
+}
+
