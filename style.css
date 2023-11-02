@@ -32,8 +32,9 @@
     z-index: 3;
 }
 #tools {
+    display: flex;
     background-color: #e7ecee;
-    
+    padding: 15px 25px;
 }
 #copy {
     margin-left: 10px;
@@ -44,6 +45,14 @@
     padding: 10px;
     font-size: medium;
     cursor: pointer;
+    margin: 0px 3px;
+}
+.hiddenInput {
+    display: none;
+}
+.hiddenInput:checked + label {
+    background-color:#cececeff;
+    border-radius: 4px;
 }
 .toolBtn:hover {
     background-color: #dadfe1;
@@ -83,7 +92,7 @@
 
 /* main body */
 #mainBody {
-
+    
 }
 #body {
     display: flex;
@@ -102,7 +111,7 @@
 #header {
     display: flex;
     position: sticky;
-    top: 99px;
+    top: 109px;
     z-index: 2;
 }
 

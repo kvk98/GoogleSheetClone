@@ -21,20 +21,24 @@
                 <button id="" class="menuBtn">Layout</button>
                 <button id="" class="menuBtn">Help</button>
             </div>
-            <form id="tools">
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="copy" title="copy"><i
-                        class="fa-regular fa-copy"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="cut" title="cut"><i
-                        class="fa-solid fa-scissors"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="paste"
-                    title="paste"><i class="fa-regular fa-clipboard"></i></label>
-                <select name="fontStyle" id="fontStyle">
-                    <option value="monospace">Monospace</option>
-                    <option value="sansarif">Sansarif</option>
-                    <option value="arial">Arial</option>
+            <form id="tools" onchange="onFormChange()">
+                <div>
+                    <input name="copy" type="checkbox" id="copy" class="hiddenInput">
+                    <label for="copy" class="toolBtn" id="" title="copy"><i class="fa-regular fa-copy"></i></label>
+                </div>
+                <div>
+                    <input name="" type="checkbox" id="cut" class="hiddenInput">
+                    <label for="cut" class="toolBtn" id="" title="cut"><i class="fa-solid fa-scissors"></i></label>
+                </div>
+                <div>
+                    <input name="" type="checkbox" id="paste" class="hiddenInput">
+                    <label for="paste" class="toolBtn" id="" title="paste"><i
+                            class="fa-regular fa-clipboard"></i></label>
+                </div>
+                <select name="color" id="fontFamily">
+                    <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                    <option value="'Courier New', Courier, monospace">Courier New</option>
+                    <option value="Arial, Helvetica, sans-serif">Arial</option>
                 </select>
                 <select name="fontSize" id="fontSize">
                     <option value="14">14</option>
@@ -42,36 +46,53 @@
                     <option value="18">18</option>
                     <option value="20">20</option>
                 </select>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="bold" title="bold"><i
-                        class="fa-solid fa-bold"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="italic"
-                    title="italic"><i class="fa-solid fa-italic"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="underline"
-                    title="underline"><i class="fa-solid fa-underline"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="leftAlign"
-                    title="leftAlign"><i class="fa-solid fa-align-left"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="center"
-                    title="center"><i class="fa-solid fa-align-center"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="rightAlign"
-                    title="rightAlign"><i class="fa-solid fa-align-right"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="fontColor"
-                    title="fontColor"><i class="fa-solid fa-font"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="fill" title="fill"><i
-                        class="fa-solid fa-fill-drip"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="download"
-                    title="download"><i class="fa-solid fa-cloud-arrow-down"></i></label>
-                <input type="checkbox" id="" class="hiddenInput">
-                <label for="" class="toolBtn" id="upload"
-                    title="upload"><i class="fa-solid fa-cloud-arrow-up"></i></label>
+                <div>
+                    <input type="checkbox" id="bold" class="hiddenInput">
+                    <label for="bold" class="toolBtn" id="" title="bold"><i class="fa-solid fa-bold"></i></label>
+                </div>
+                <div>
+                    <input type="checkbox" id="italic" class="hiddenInput">
+                    <label for="italic" class="toolBtn" id="" title="italic"><i class="fa-solid fa-italic"></i></label>
+                </div>
+                <div>
+                    <input type="checkbox" id="underline" class="hiddenInput">
+                    <label for="underline" class="toolBtn" id="" title="underline"><i
+                            class="fa-solid fa-underline"></i></label>
+                </div>
+                <div>
+                    <input  type="radio" name="textAlign" id="leftAlign" class="hiddenInput" value="left">
+                    <label for="leftAlign" class="toolBtn" id="" title="leftAlign"><i
+                            class="fa-solid fa-align-left"></i></label>
+                
+            
+                    <input  type="radio" name="textAlign" id="center" class="hiddenInput" value="center">
+                    <label for="center" class="toolBtn" id="" title="center"><i
+                            class="fa-solid fa-align-center"></i></label>
+                
+            
+                    <input  type="radio" name="textAlign" id="rightAlign" class="hiddenInput" value="right">
+                    <label for="rightAlign" class="toolBtn" id="" title="rightAlign"><i
+                            class="fa-solid fa-align-right"></i></label>
+                </div>
+                <div>
+                    <input type="color" id="fontColor" class="hiddenInput">
+                    <label for="fontColor" class="toolBtn" id="" title="fontColor"><i
+                            class="fa-solid fa-font"></i></label>
+                </div>
+                <div>
+                    <input type="color" id="fill" class="hiddenInput">
+                    <label for="fill" class="toolBtn" id="" title="fill"><i class="fa-solid fa-fill-drip"></i></label>
+                </div>
+                <div>
+                    <input type="checkbox" id="download" class="hiddenInput">
+                    <label for="download" class="toolBtn" id="" title="download"><i
+                            class="fa-solid fa-cloud-arrow-down"></i></label>
+                </div>
+                <div>
+                    <input type="checkbox" id="upload" class="hiddenInput">
+                    <label for="upload" class="toolBtn" id="" title="upload"><i
+                            class="fa-solid fa-cloud-arrow-up"></i></label>
+                </div>
             </form>
             <div id="functionbar">
                 <div id="cellId">cell</div>
