@@ -1,47 +1,71 @@
+let columns = 26;
+let rows = 100;
 const header = document.getElementById("header");
-const body = document.getElementById("body");
+const serialNo = document.getElementById("serialNoContainer");
+const cellBody = document.getElementById("cellBody");
 
-for (let i = 65; i <= 90; i++) {
-    let char = String.fromCharCode(i);
-    
-    const bold = document.createElement("b");
-    bold.innerText = char;
+let id;
 
-    header.appendChild(bold);
+function createHeaderCells() {
 
-}
+    for(let i=0; i<=columns; i++) {
+        const headerCell = document.createElement("div");
+        headerCell.classList = "headerCell cell";
+        if (!i==0){
 
-// const body = document.getElementById("body");
-
-
-function createAndAppendRow(rowNumber) {
-    let div = document.createElement("div");
-    let row1 = body.appendChild(div);
-    row1.className = "row";
-    
-
-    for (let i = 64; i < 90; i++) {
-        if (i === 64) {
-            let b = document.createElement("b");
-            b.innerText = rowNumber;
-            row1.appendChild(b);
+            headerCell.innerText= String.fromCharCode(64 + i);
         }
-        else {
-            let cell = document.createElement("div");
-            cell.contentEditable = true; 
-            cell.id = `${String.fromCharCode(i)}${rowNumber};`
-            cell.addEventListener("focus", onCellFocus);
-            row1.appendChild(cell);
-        }
+        header.appendChild(headerCell);
     }
-
-    body.appendChild(row1);
 }
 
-for (let i = 0; i < 100; i++) {
-    createAndAppendRow(i+1);    
+function serialNumberContainer() {
+    for(let i=1; i<=rows; i++) {
+        const serialNoCell = document.createElement("div");
+        serialNoCell.classList= "cell";
+        serialNoCell.innerText = i;
+        serialNo.appendChild(serialNoCell); 
+    }
 }
 
-function onCellFocus(e) {
-    console.log(e.target.id);
+
+function createRow(rowNumber) {
+    const row = document.createElement("div");
+    row.className = "row";
+    for(let i=1; i<=columns; i++) {
+        const cell = document.createElement("div");
+        cell.className = "mainCell cell";
+        cell.contentEditable = true;
+        cell.addEventListener("focus", onCellFocus);
+        row.appendChild(cell);
+
+        cell.id = String.fromCharCode(64 + i) + rowNumber;
+        // id = cell.id;
+    }
+    cellBody.appendChild(row);
+}
+
+
+
+function buildCellBody() {
+    for (let i=1; i<=rows; i++) {
+        createRow(i);
+    }
+}
+
+createHeaderCells();
+serialNumberContainer();
+buildCellBody();
+
+
+// on click effects
+const menuBtn = document.querySelectorAll(".menuBtn");
+
+for(let i=0; i<menuBtn.length; i++) {
+
+    menuBtn[i].addEventListener("click", onMenuBtnClick);
+}
+
+function onMenuBtnClick(event) {
+    menuBtn.classList = "menuBtnActive";
 }

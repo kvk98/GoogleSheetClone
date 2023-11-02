@@ -1,33 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Google Sheet</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <div id="header">
-        <b>S.no</b>
+    <div id="rootContainer">
+        <section id="toolbar">
+            <div id="menubar">
+                <button id="file" class="menuBtn">File</button>
+                <button id="" class="menuBtn">Home</button>
+                <button id="" class="menuBtn">Insert</button>
+                <button id="" class="menuBtn">Layout</button>
+                <button id="" class="menuBtn">Help</button>
+            </div>
+            <form id="tools">
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="copy" title="copy"><i
+                        class="fa-regular fa-copy"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="cut" title="cut"><i
+                        class="fa-solid fa-scissors"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="paste"
+                    title="paste"><i class="fa-regular fa-clipboard"></i></label>
+                <select name="fontStyle" id="fontStyle">
+                    <option value="monospace">Monospace</option>
+                    <option value="sansarif">Sansarif</option>
+                    <option value="arial">Arial</option>
+                </select>
+                <select name="fontSize" id="fontSize">
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="20">20</option>
+                </select>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="bold" title="bold"><i
+                        class="fa-solid fa-bold"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="italic"
+                    title="italic"><i class="fa-solid fa-italic"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="underline"
+                    title="underline"><i class="fa-solid fa-underline"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="leftAlign"
+                    title="leftAlign"><i class="fa-solid fa-align-left"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="center"
+                    title="center"><i class="fa-solid fa-align-center"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="rightAlign"
+                    title="rightAlign"><i class="fa-solid fa-align-right"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="fontColor"
+                    title="fontColor"><i class="fa-solid fa-font"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="fill" title="fill"><i
+                        class="fa-solid fa-fill-drip"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="download"
+                    title="download"><i class="fa-solid fa-cloud-arrow-down"></i></label>
+                <input type="checkbox" id="" class="hiddenInput">
+                <label for="" class="toolBtn" id="upload"
+                    title="upload"><i class="fa-solid fa-cloud-arrow-up"></i></label>
+            </form>
+            <div id="functionbar">
+                <div id="cellId">cell</div>
+                <div id="fx-input">
+                    <span>fx</span>
+                    <input type="text">
+                </div>
+            </div>
+        </section>
+        <section id="mainBody">
+            <div id="header"></div>
+            <div id="body">
+                <div id="serialNoContainer"></div>
+                <div id="cellBody"></div>
+            </div>
+        </section>
+        <section id="sheetNav"></section>
+
     </div>
 
-    <section id="body">
-        
-        <!-- <div class="row">
-            <b>1</b>
-            <div>empty</div>
-            <div>empty</div>
-            <div>empty</div>
-            <div>empty</div>
-            <div>empty</div>
-            <div>empty</div>
-            <div>empty</div>
-            <div>empty</div>
-            <div>empty</div>
-        </div> -->
-    </section>
 
-
+    <script src="toolbar.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
