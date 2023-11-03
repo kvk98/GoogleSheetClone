@@ -36,10 +36,13 @@ function createRow(rowNumber) {
         const cell = document.createElement("div");
         cell.className = "mainCell cell";
         cell.contentEditable = true;
-        cell.addEventListener("focus", onCellFocus);
+        cell.id = String.fromCharCode(64 + i) + rowNumber;
         row.appendChild(cell);
 
-        cell.id = String.fromCharCode(64 + i) + rowNumber;
+        cell.addEventListener("focus", onCellFocus);
+        cell.addEventListener("input", onFormChange);
+
+
         // id = cell.id;
     }
     cellBody.appendChild(row);

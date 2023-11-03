@@ -34,7 +34,9 @@
 #tools {
     display: flex;
     background-color: #e7ecee;
-    padding: 15px 25px;
+    padding: 5px;
+    align-items: center;
+    margin-left: 10px;
 }
 #copy {
     margin-left: 10px;
@@ -57,6 +59,21 @@
 .toolBtn:hover {
     background-color: #dadfe1;
     border-radius: 4px;
+}
+
+.formBtn {
+    border: none;
+    background-color: transparent;
+    font-size: medium;
+    cursor: pointer;
+    padding: 10px 10px;
+    margin: 0px;
+}
+.formBtn:hover {
+    cursor: pointer;
+    background-color: #dadfe1;
+    border-radius: 4px;
+    /* margin: 10px; */
 }
 
 /* functionbar */

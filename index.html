@@ -36,9 +36,9 @@
                             class="fa-regular fa-clipboard"></i></label>
                 </div>
                 <select name="color" id="fontFamily">
+                    <option value="Arial, Helvetica, sans-serif">Arial</option>
                     <option value="'Times New Roman', Times, serif">Times New Roman</option>
                     <option value="'Courier New', Courier, monospace">Courier New</option>
-                    <option value="Arial, Helvetica, sans-serif">Arial</option>
                 </select>
                 <select name="fontSize" id="fontSize">
                     <option value="14">14</option>
@@ -60,17 +60,17 @@
                             class="fa-solid fa-underline"></i></label>
                 </div>
                 <div>
-                    <input  type="radio" name="textAlign" id="leftAlign" class="hiddenInput" value="left">
+                    <input type="radio" name="textAlign" id="leftAlign" class="hiddenInput" value="left">
                     <label for="leftAlign" class="toolBtn" id="" title="leftAlign"><i
                             class="fa-solid fa-align-left"></i></label>
-                
-            
-                    <input  type="radio" name="textAlign" id="center" class="hiddenInput" value="center">
+
+
+                    <input type="radio" name="textAlign" id="center" class="hiddenInput" value="center">
                     <label for="center" class="toolBtn" id="" title="center"><i
                             class="fa-solid fa-align-center"></i></label>
-                
-            
-                    <input  type="radio" name="textAlign" id="rightAlign" class="hiddenInput" value="right">
+
+
+                    <input type="radio" name="textAlign" id="rightAlign" class="hiddenInput" value="right">
                     <label for="rightAlign" class="toolBtn" id="" title="rightAlign"><i
                             class="fa-solid fa-align-right"></i></label>
                 </div>
@@ -84,14 +84,10 @@
                     <label for="fill" class="toolBtn" id="" title="fill"><i class="fa-solid fa-fill-drip"></i></label>
                 </div>
                 <div>
-                    <input type="checkbox" id="download" class="hiddenInput">
-                    <label for="download" class="toolBtn" id="" title="download"><i
-                            class="fa-solid fa-cloud-arrow-down"></i></label>
+                    <button type="button" class="formBtn" onclick="downloadData()"><i class="fa-solid fa-cloud-arrow-down"></i></button>
                 </div>
                 <div>
-                    <input type="checkbox" id="upload" class="hiddenInput">
-                    <label for="upload" class="toolBtn" id="" title="upload"><i
-                            class="fa-solid fa-cloud-arrow-up"></i></label>
+                    <button type="button" class="formBtn" onclick="uploadData()"><i class="fa-solid fa-cloud-arrow-up"></i></button>
                 </div>
             </form>
             <div id="functionbar">
@@ -114,6 +110,7 @@
     </div>
 
 
+    <script src="download-upload.js"></script>
     <script src="toolbar.js"></script>
     <script src="script.js"></script>
 </body>

@@ -8,14 +8,15 @@ const defaultProperties = {
     copy : false,
     cut : false,
     paste: false,
-    fontFamily: "'Times New Roman', Times, serif",
+    fontFamily: "Arial, Helvetica, sans-serif",
     fontSize : 14,
     isBold : false,
     isItalic: false,
     isUnderlined: false,
     textAlign: "left",
     color: "#000",
-    backgroundColor: "#ffffff"
+    backgroundColor: "#e7ecee",
+    value : ""
 }
 
 function onCellFocus(event) {
@@ -54,7 +55,7 @@ function onFormChange(){
     }
     applyStylesToCell(currentState);
 
-    state[activeElement.id] = currentState;
+    state[activeElement.id] = {...currentState, value: activeElement.innerText};
 }
 
 function applyStylesToCell(styleObject) {
