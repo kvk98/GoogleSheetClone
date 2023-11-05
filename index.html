@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
@@ -105,10 +107,20 @@
                 <div id="cellBody"></div>
             </div>
         </section>
-        <section id="sheetNav"></section>
+        <section id="sheetNav">
+            <div class="sheet-bar">
+                <div class="scroller">
+                    <div class="material-icons icon-left-scroll">arrow_left</div>
+                    <div class="material-icons icon-right-scroll">arrow_right</div>
+                </div>
+                <div class="material-icons icon-add">add_circle</div>
+                <div class="sheet-tab-container">
+                    <div class="sheet-tab selected">Sheet1</div>
+                </div>
+            </div>
+        </section>
 
     </div>
-
 
     <script src="download-upload.js"></script>
     <script src="toolbar.js"></script>

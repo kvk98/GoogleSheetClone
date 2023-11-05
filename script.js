@@ -14,9 +14,36 @@ function createHeaderCells() {
         if (!i==0){
 
             headerCell.innerText= String.fromCharCode(64 + i);
+            headerCell.setAttribute("data-column", String.fromCharCode(64 + i));
+            headerCell.addEventListener("click", onHeaderCellClick);
         }
         header.appendChild(headerCell);
     }
+}
+
+
+
+function sortRows(column) {
+    const rows = Array.from(cellBody.getElementsByClassName("row"));
+    rows.sort((a, b) => {
+        const cellA = a.querySelector(`[id^="${column}"]`).textContent;
+        const cellB = b.querySelector(`[id^="${column}"]`).textContent;
+        return cellA.localeCompare(cellB);
+    });
+
+    
+    cellBody.innerHTML = '';
+
+    
+    for (const row of rows) {
+        cellBody.appendChild(row);
+    }
+}
+
+
+function onHeaderCellClick(event) {
+    const column = event.target.getAttribute("data-column");
+    sortRows(column);
 }
 
 function serialNumberContainer() {
@@ -43,7 +70,7 @@ function createRow(rowNumber) {
         cell.addEventListener("input", onFormChange);
 
 
-        // id = cell.id;
+        
     }
     cellBody.appendChild(row);
 }
@@ -61,7 +88,7 @@ serialNumberContainer();
 buildCellBody();
 
 
-// on click effects
+
 const menuBtn = document.querySelectorAll(".menuBtn");
 
 for(let i=0; i<menuBtn.length; i++) {
@@ -70,5 +97,51 @@ for(let i=0; i<menuBtn.length; i++) {
 }
 
 function onMenuBtnClick(event) {
-    menuBtn.classList = "menuBtnActive";
+    menuBtn.forEach((button) => button.classList.remove("menuBtnActive"));
+    event.target.classList.add("menuBtnActive");
 }
+
+
+
+
+
+const cellData = {};
+
+function evaluateFormula(formula) {
+    
+    const [operator, cellRange] = formula.substring(1).split('(');
+    
+    
+    const cellReferences = cellRange.substring(0, cellRange.length - 1).split(':');
+
+    
+    if (operator === 'SUM') {
+        let sum = 0;
+        for (const cellRef of cellReferences) {
+            const value = evaluateCellReference(cellRef);
+            if (!isNaN(value)) {
+                sum += value;
+            }
+        }
+        return sum;
+    }
+
+    
+
+    return null; 
+}
+
+function evaluateCellReference(cellRef) {
+    const cellValue = cellData[cellRef];
+
+    if (cellValue === undefined) {
+        return 0; 
+    }
+
+    if (cellValue.startsWith('=')) {
+        return evaluateFormula(cellValue);
+    }
+
+    return parseFloat(cellValue); 
+}
+
